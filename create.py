@@ -70,6 +70,7 @@ if copy == "forward setting":
         time.sleep(0.6)
         pyautogui.hotkey('enter')
         time.sleep(3)
+        #ここに保存するボタンクリック必要
         pyautogui.click(x=1874, y=95) #右上box位置クリック
         time.sleep(1)
         pyautogui.hotkey('tab')
@@ -105,14 +106,126 @@ if copy == "forward setting":
         time.sleep(0.6)
 else:
     print("メアド作成スタート")
+    pyautogui.hotkey('right')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl','shift','alt',':')
+    time.sleep(0.5)
+    webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
+    time.sleep(3)
+    for i in range(14):
+        pyautogui.hotkey('down')
+        time.sleep(0.2)   
+    pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
+    time.sleep(0.5)
+    pyautogui.click(x=130, y=16) #表②位置クリック
+    time.sleep(2)
+    pyautogui.hotkey('right')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl','c') #文字列コピー
+    time.sleep(0.6)
+    pyautogui.click(x=345, y=16) #ムームドメインクリック
+    time.sleep(2)
+    pyautogui.hotkey('ctrl','a') 
+    time.sleep(0.6)
+    pyautogui.hotkey('backspace') 
+    time.sleep(0.6)
+    pyautogui.hotkey('ctrl','v') #文字列貼り付け
+    time.sleep(0.6)
+    pyautogui.hotkey('tab') 
+    time.sleep(0.6)
+    pyautogui.click(x=130, y=16) #表②位置クリック
+    time.sleep(2)
+    pyautogui.hotkey('right')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl','c') #ドメイン番号コピー
+    time.sleep(0.6)
+    domain_number = pyperclip.paste()
     
+    #ドメイン選択
+    if domain_number == "20":
+        time.sleep(0.3)   
+    elif domain_number == "13":
+        for i in range(2):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "10":
+        for i in range(3):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "19":
+        for i in range(5):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "4":
+        for i in range(6):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "15":
+        for i in range(7):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "7":
+        for i in range(8):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "16":
+        for i in range(9):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "14":
+        for i in range(12):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "12":
+        for i in range(13):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "18":
+        for i in range(14):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "11":
+        for i in range(15):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "5":
+        for i in range(16):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "17":
+        for i in range(17):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "6":
+        for i in range(18):
+            pyautogui.hotkey('down')
+            time.sleep(0.3)   
+    elif domain_number == "3":
+        for i in range(19):
+            pyautogui.hotkey('down')   
+            time.sleep(0.3)   
 
-
-        
-
-
-
-
+    time.sleep(0.6)
+    pyautogui.hotkey('enter') 
+    time.sleep(0.6)
+    pyautogui.hotkey('enter') 
+    time.sleep(0.6)
+    pyautogui.hotkey('tab') 
+    time.sleep(0.5)
+    pyautogui.click(x=130, y=16) #表②位置クリック
+    time.sleep(2)
+    pyautogui.hotkey('right')
+    time.sleep(0.5)
+    pyautogui.hotkey('ctrl','c') #passwordコピー
+    time.sleep(0.6)
+    pyautogui.click(x=345, y=16) #ムームドメインクリック
+    time.sleep(2)
+    pyautogui.hotkey('ctrl','v') #password貼り付け
+    time.sleep(0.6)
+    pyautogui.hotkey('tab')
+    time.sleep(0.6)
+    pyautogui.hotkey('ctrl','v') #password貼り付け
+    time.sleep(0.6)
 
 
 
