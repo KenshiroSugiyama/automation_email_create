@@ -132,16 +132,71 @@ def main():
         time.sleep(1)
         pyautogui.hotkey('ctrl','shift','alt',':')
         time.sleep(0.5)
-        webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
-        time.sleep(3)
-        for i in range(14):
-            pyautogui.hotkey('down')
-            time.sleep(0.2)   
-        pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
-        time.sleep(0.5)
+        pyautogui.hotkey('right')
+        time.sleep(1)
+        pyautogui.hotkey('right')
+        time.sleep(1)
+        pyautogui.hotkey('ctrl','c')
+        time.sleep(2)
+        domain_number = pyperclip.paste()
+        # print(copy)
+        if 3<= int(domain_number) <=20 : #ドメイン番号でアカウント切り替え（3～20）真之アカ
+            webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
+            time.sleep(3)
+            for i in range(3):
+                pyautogui.hotkey('tab')
+                time.sleep(0.2) 
+            pyautogui.hotkey('backspace') 
+            time.sleep(0.6)
+            pyperclip.copy("saneyuki.akiyama2018@gmail.com")
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('backspace') 
+            time.sleep(0.6)
+            pyperclip.copy(os.environ['pass1'])
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('enter') 
+            time.sleep(6)
+            for i in range(14):
+                pyautogui.hotkey('down')
+                time.sleep(0.2)   
+            pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
+            time.sleep(0.5)
+        elif 21<= int(domain_number) <=25:
+            webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
+            time.sleep(3)
+            for i in range(3):
+                pyautogui.hotkey('tab')
+                time.sleep(0.2) 
+            pyautogui.hotkey('backspace') 
+            time.sleep(0.6)
+            pyperclip.copy("ty_para@hotmail.com")
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('backspace') 
+            time.sleep(0.6)
+            pyperclip.copy(os.environ['pass2'])
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('enter') 
+            time.sleep(6)
+            for i in range(14):
+                pyautogui.hotkey('down')
+                time.sleep(0.2)   
+            pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
+            time.sleep(0.5)
         pyautogui.click(x=130, y=16) #表②位置クリック
         time.sleep(4)
-        pyautogui.hotkey('right')
+        pyautogui.hotkey('left')
         time.sleep(1)
         pyautogui.hotkey('ctrl','c') #文字列コピー
         time.sleep(0.6)
@@ -155,15 +210,15 @@ def main():
         time.sleep(0.6)
         pyautogui.hotkey('tab') 
         time.sleep(0.6)
-        pyautogui.click(x=130, y=16) #表②位置クリック
-        time.sleep(2)
-        pyautogui.hotkey('right')
-        time.sleep(0.5)
-        pyautogui.hotkey('ctrl','c') #ドメイン番号コピー
-        time.sleep(0.6)
-        domain_number = pyperclip.paste()
-        pyautogui.click(x=345, y=16) #ムームドメインクリック
-        time.sleep(2)
+        # pyautogui.click(x=130, y=16) #表②位置クリック
+        # time.sleep(2)
+        # pyautogui.hotkey('right')
+        # time.sleep(0.5)
+        # pyautogui.hotkey('ctrl','c') #ドメイン番号コピー
+        # time.sleep(0.6)
+        # domain_number = pyperclip.paste()
+        # pyautogui.click(x=345, y=16) #ムームドメインクリック
+        # time.sleep(2)
         
         #ドメイン選択
         if domain_number == "20":
@@ -227,7 +282,25 @@ def main():
         elif domain_number == "3":
             for i in range(19):
                 pyautogui.hotkey('down')   
-                time.sleep(0.3)   
+                time.sleep(0.3)  
+        elif domain_number == "21":
+            for i in range(4):
+                pyautogui.hotkey('down')   
+                time.sleep(0.3)
+        elif domain_number == "22":
+            time.sleep(0.3)  
+        elif domain_number == "23":
+            for i in range(2):
+                pyautogui.hotkey('down')   
+                time.sleep(0.3)  
+        elif domain_number == "24":
+            for i in range(5):
+                pyautogui.hotkey('down')   
+                time.sleep(0.3)  
+        elif domain_number == "25":
+            for i in range(6):
+                pyautogui.hotkey('down')   
+                time.sleep(0.3)    
 
         time.sleep(0.6)
         pyautogui.hotkey('enter') 
@@ -238,6 +311,8 @@ def main():
         time.sleep(0.5)
         pyautogui.click(x=130, y=16) #表②位置クリック
         time.sleep(2)
+        pyautogui.hotkey('right')
+        time.sleep(0.5)
         pyautogui.hotkey('right')
         time.sleep(0.5)
         pyautogui.hotkey('ctrl','c') #passwordコピー
@@ -311,6 +386,12 @@ def main():
         if home is None:
             print("メアド作成失敗")
         else:
+            #logout
+            pyautogui.moveTo(1095, 173)
+            time.sleep(2)
+            logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
+            pyautogui.click(logout_button)
+            time.sleep(3)
             pyautogui.click(x=130, y=16) #表②位置クリック
             time.sleep(2)
             pyautogui.hotkey('right')
