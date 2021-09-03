@@ -167,7 +167,7 @@ def main():
                 time.sleep(0.2)   
             pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
             time.sleep(0.5)
-        elif 21<= int(domain_number) <=25:
+        elif 21<= int(domain_number) <=25: #初代アカウントに切り替え
             webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
             time.sleep(3)
             for i in range(3):
@@ -330,6 +330,7 @@ def main():
             pyautogui.hotkey('tab')
             time.sleep(0.6)
 
+        #recaptcha突破用に　dispay:none を削除
         pyautogui.hotkey('ctrl','shift','i')
         time.sleep(5)
         pyautogui.hotkey('ctrl','f')
@@ -386,7 +387,7 @@ def main():
         if home is None:
             print("メアド作成失敗")
         else:
-            #logout
+            #アカウント切り替え用に毎回ログアウトする
             pyautogui.moveTo(1095, 173)
             time.sleep(2)
             logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
