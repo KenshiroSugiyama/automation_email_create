@@ -140,13 +140,14 @@ def main():
         time.sleep(2)
         domain_number = pyperclip.paste()
         # print(copy)
+        webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
+        time.sleep(3)
+        for i in range(3):
+            pyautogui.hotkey('tab')
+            time.sleep(0.2) 
+        pyautogui.hotkey('backspace') 
+
         if 3<= int(domain_number) <=20 : #ドメイン番号でアカウント切り替え（3～20）真之アカ
-            webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
-            time.sleep(3)
-            for i in range(3):
-                pyautogui.hotkey('tab')
-                time.sleep(0.2) 
-            pyautogui.hotkey('backspace') 
             time.sleep(0.6)
             pyperclip.copy("saneyuki.akiyama2018@gmail.com")
             pyautogui.hotkey('ctrl', 'v')
@@ -167,13 +168,7 @@ def main():
                 time.sleep(0.2)   
             pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
             time.sleep(0.5)
-        elif 21<= int(domain_number) <=25: #初代アカウントに切り替え
-            webbrowser.open("https://muumuu-domain.com/?mode=conpane&state=mail_edit_address")
-            time.sleep(3)
-            for i in range(3):
-                pyautogui.hotkey('tab')
-                time.sleep(0.2) 
-            pyautogui.hotkey('backspace') 
+        elif 21<= int(domain_number) <=25:
             time.sleep(0.6)
             pyperclip.copy("ty_para@hotmail.com")
             pyautogui.hotkey('ctrl', 'v')
@@ -183,6 +178,27 @@ def main():
             pyautogui.hotkey('backspace') 
             time.sleep(0.6)
             pyperclip.copy(os.environ['pass2'])
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('enter') 
+            time.sleep(6)
+            for i in range(14):
+                pyautogui.hotkey('down')
+                time.sleep(0.2)   
+            pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
+            time.sleep(0.5)
+        elif 26<= domain_number <= 32:
+            time.sleep(0.6)
+            pyperclip.copy("kita.minami.ue@gmail.com")
+            pyautogui.hotkey('ctrl', 'v')
+            time.sleep(0.6)
+            pyautogui.hotkey('tab')
+            time.sleep(0.6)
+            pyautogui.hotkey('backspace') 
+            time.sleep(0.6)
+            pyperclip.copy(os.environ['pass3'])
             pyautogui.hotkey('ctrl', 'v')
             time.sleep(0.6)
             pyautogui.hotkey('tab')
@@ -221,83 +237,80 @@ def main():
         # time.sleep(2)
         
         #ドメイン選択
-        if domain_number == "20":
+        if domain_number == "20" or domain_number == "27":
+            pyautogui.hotkey('down')
             time.sleep(0.3)   
-        elif domain_number == "13":
-            for i in range(2):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "10":
+        elif domain_number == "13" or domain_number == "29":
             for i in range(3):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
+        elif domain_number == "10" or domain_number == "21" or domain_number == "26":
+            for i in range(4):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
         elif domain_number == "19":
-            for i in range(5):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "4":
-            for i in range(6):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "15":
             for i in range(7):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
-        elif domain_number == "7":
-            for i in range(8):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "16":
+        elif domain_number == "4":
             for i in range(9):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
-        elif domain_number == "14":
+        elif domain_number == "15":
+            for i in range(10):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
+        elif domain_number == "7":
+            for i in range(11):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
+        elif domain_number == "16":
             for i in range(12):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
-        elif domain_number == "12":
-            for i in range(13):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "18":
-            for i in range(14):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "11":
-            for i in range(15):
-                pyautogui.hotkey('down')
-                time.sleep(0.3)   
-        elif domain_number == "5":
+        elif domain_number == "14":
             for i in range(16):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
-        elif domain_number == "17":
+        elif domain_number == "12":
             for i in range(17):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
-        elif domain_number == "6":
+        elif domain_number == "18":
             for i in range(18):
                 pyautogui.hotkey('down')
                 time.sleep(0.3)   
+        elif domain_number == "11":
+            for i in range(20):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
+        elif domain_number == "5":
+            for i in range(21):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
+        elif domain_number == "17":
+            for i in range(22):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
+        elif domain_number == "6":
+            for i in range(23):
+                pyautogui.hotkey('down')
+                time.sleep(0.3)   
         elif domain_number == "3":
-            for i in range(19):
+            for i in range(24):
                 pyautogui.hotkey('down')   
                 time.sleep(0.3)  
-        elif domain_number == "21":
-            for i in range(4):
-                pyautogui.hotkey('down')   
-                time.sleep(0.3)
-        elif domain_number == "22":
+        elif domain_number == "22" or domain_number == "28":
             time.sleep(0.3)  
-        elif domain_number == "23":
+        elif domain_number == "23" or domain_number == "30":
             for i in range(2):
                 pyautogui.hotkey('down')   
                 time.sleep(0.3)  
-        elif domain_number == "24":
+        elif domain_number == "24" or domain_number =="32":
             for i in range(5):
                 pyautogui.hotkey('down')   
                 time.sleep(0.3)  
-        elif domain_number == "25":
+        elif domain_number == "25" or domain_number == "31":
             for i in range(6):
                 pyautogui.hotkey('down')   
                 time.sleep(0.3)    
@@ -330,7 +343,6 @@ def main():
             pyautogui.hotkey('tab')
             time.sleep(0.6)
 
-        #recaptcha突破用に　dispay:none を削除
         pyautogui.hotkey('ctrl','shift','i')
         time.sleep(5)
         pyautogui.hotkey('ctrl','f')
@@ -387,7 +399,7 @@ def main():
         if home is None:
             print("メアド作成失敗")
         else:
-            #アカウント切り替え用に毎回ログアウトする
+            #logout
             pyautogui.moveTo(1095, 173)
             time.sleep(2)
             logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
