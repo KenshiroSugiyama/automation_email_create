@@ -20,15 +20,17 @@ def main():
 
     #表②開く
     webbrowser.open("https://docs.google.com/spreadsheets/d/1GPpVKAA1okFjpifE494Ax4laHYQ5XaMvIZ6CQByPD_Y/edit#gid=0") 
-    time.sleep(10)
-    pyautogui.hotkey('right')
-    time.sleep(1)
+    time.sleep(15)
     pyautogui.hotkey('ctrl','down')
-    time.sleep(1)
-    pyautogui.hotkey('down')
-    time.sleep(1)
+    time.sleep(2)
     pyautogui.hotkey('right')
-    time.sleep(1)
+    time.sleep(2)
+    pyautogui.hotkey('ctrl','up')
+    time.sleep(2)
+    pyautogui.hotkey('down')
+    time.sleep(2)
+    pyautogui.hotkey('right')
+    time.sleep(2)
     pyautogui.hotkey('ctrl','c')
     time.sleep(2)
     copy = pyperclip.paste()
@@ -116,6 +118,7 @@ def main():
             pyautogui.click(x=1899, y=13) #右上×クリック
             time.sleep(0.6)
         else:
+            pyautogui.click(x=130, y=16) #表②位置クリック
             time.sleep(2)
             pyautogui.hotkey('left')
             time.sleep(0.6)
@@ -189,7 +192,7 @@ def main():
                 time.sleep(0.2)   
             pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
             time.sleep(0.5)
-        elif 26<= domain_number <= 32:
+        elif 26<= int(domain_number) <= 32:
             time.sleep(0.6)
             pyperclip.copy("kita.minami.ue@gmail.com")
             pyautogui.hotkey('ctrl', 'v')
@@ -205,10 +208,13 @@ def main():
             time.sleep(0.6)
             pyautogui.hotkey('enter') 
             time.sleep(6)
-            for i in range(14):
+            for i in range(20):
                 pyautogui.hotkey('down')
                 time.sleep(0.2)   
-            pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
+            create = pyautogui.locateOnScreen('create.png' , confidence=0.7)
+            print(create)
+            pyautogui.click(create) #メールアドレス作成ボタンクリック
+            # pyautogui.click(x=1034, y=972) #メールアドレス作成ボタンクリック
             time.sleep(0.5)
         pyautogui.click(x=130, y=16) #表②位置クリック
         time.sleep(4)
@@ -395,11 +401,10 @@ def main():
         pyautogui.hotkey('enter') 
         time.sleep(7)
 
+        emailexist = pyautogui.locateOnScreen('existmail.png' , confidence=0.8)
         home = pyautogui.locateOnScreen('home.png' , confidence=0.7)
-        if home is None:
-            print("メアド作成失敗")
-        else:
-            #logout
+        if home is not None:
+           #logout
             pyautogui.moveTo(1095, 173)
             time.sleep(2)
             logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
@@ -411,6 +416,35 @@ def main():
             time.sleep(0.5)
             pyautogui.hotkey('ctrl','shift','alt',':')
             time.sleep(0.5)
+
+        elif emailexist is not None:
+            print("作成済みメアド")
+            pyautogui.click(x=1170, y=383) #表示×クリック
+            for i in range(21):
+                pyautogui.hotkey('up')
+                time.sleep(0.6)
+            pyautogui.moveTo(1095, 173)
+            time.sleep(2)
+            logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
+            pyautogui.click(logout_button)
+            time.sleep(3)
+            pyautogui.click(x=130, y=16) #表②位置クリック
+            time.sleep(2)
+            pyautogui.hotkey('right')
+            time.sleep(0.5)
+            pyautogui.hotkey('ctrl','shift','alt',':')
+            time.sleep(0.5)
+        else:
+            print("メアド作成失敗")
+            pyautogui.click(x=1170, y=383) #×クリック
+            for i in range(21):
+                pyautogui.hotkey('up')
+                time.sleep(0.6)
+            pyautogui.moveTo(1095, 173)
+            time.sleep(2)
+            logout_button = pyautogui.locateOnScreen('logout.jpg' , confidence=0.7)
+            pyautogui.click(logout_button)
+            time.sleep(3)
 
         time.sleep(3)
         pyautogui.click(x=1899, y=13) #右上×クリック
